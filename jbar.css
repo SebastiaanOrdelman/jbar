@@ -1,0 +1,96 @@
+/**
+ * Definition list bar layout
+ */
+dl.jbar {
+    margin: 20px;
+}
+dl.jbar dt,
+dl.jbar dd {
+	height: 24px;
+	margin: 0;
+	overflow: hidden;
+}
+dl.jbar dt {
+    display: block;
+    float: left;
+    width: 120px;
+}
+dl.jbar dt span.label { 
+	display: block;
+	width: 90%;
+	height: 20px;
+	overflow: hidden;
+}
+
+dl.jbar dd {
+	display: block;
+	margin-left: 120px;
+}
+dl.jbar dd span {
+    display: block;
+    float: left;	
+}
+dl.jbar dd span.bar {
+    height: 18px;
+}
+dl.jbar dd span.value {
+	display: none; /* will show after animation */
+	line-height: 20px;
+	margin-left: 10px;
+	width: 40px;
+}
+/* Bar default colors */
+.jbar .bar, /* default */
+.jbar .bg-0 { background: #FF0000; }
+.jbar .bg-1 { background: #FF3300; }
+.jbar .bg-2 { background: #FF6600; }
+.jbar .bg-3 { background: #FF9900; }
+.jbar .bg-4 { background: #FFCC00; }
+.jbar .bg-5 { background: #FFFF00; }
+
+/**
+ * Options
+ * -------
+ */
+/* Do not show label; showLabel : false */
+dl.jbar.no-label dt {
+	width: 0;
+}
+dl.jbar.no-label dt span.label {
+    width: 0;
+}
+dl.jbar.no-label dd {
+    margin-left: 0;	
+}
+/* Do not show value; showValue : false */
+dl.jbar.no-value dd span.value {
+    margin: 0;
+    width: 0;
+}
+
+/**
+ * Styles
+ * ------
+ */
+/* Rounded corners */
+.jbar.rounded dd span.bar {
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+/* Rounded end */
+.jbar.rounded-end dd span.bar {
+    -webkit-border-radius: 0 9px 9px 0;
+    -moz-border-radius: 0 9px 9px 0;
+    border-radius: 0 9px 9px 0;
+}
+/* Shadow */
+.jbar.shadow dd span.bar {
+    -moz-box-shadow:    1px 2px 2px 1px #999;
+    -webkit-box-shadow: 1px 2px 2px 1px #999;
+    box-shadow:         1px 2px 2px 1px #999;
+    margin-top: 1px;
+}
+.jbar.shadow dd span.value {
+	margin-top: 1px;
+}

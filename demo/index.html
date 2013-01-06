@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>jBar demo</title>
+		
+		<link rel="stylesheet" type="text/css" media="all" href="../jbar.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="chart-layout.css" />
+		
+		<style type="text/css">
+		    /**
+			 * Infographic sprite example
+			 */
+			.jbar.men-vs-women dt,
+			.jbar.men-vs-women dd {
+			    height: 104px;  
+			}
+			.jbar.men-vs-women .bar {
+			    background: transparent url( man-woman-sprite-35x100.png) repeat-x;
+			    height: 100px;  
+			}
+			.jbar.men-vs-women .bg-0 { background-position: 0 -100px; }
+			.jbar.men-vs-women .bg-1 { background-position: 0 0; }
+		</style>
+		
+		<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="../jquery.jbar.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+		    /**
+		     * Assign to html elements
+		     */
+			$(function(){
+			    // Normal
+			    $( '.jbar.chart-1' ).jbar();
+			    
+			    $( '.jbar.chart-2' ).jbar( {
+			        maxValue: 100 // optional; set base scale (nice when showing more stats with same unit scale)  
+			    });
+			    
+			    $( '.jbar.chart-3' ).jbar( {
+			        showValue : false, // Do not show value
+			        speed: 800 // Faster, default 2000 ms
+			    });
+			    
+			    // Using sprite and not showing label or value
+			    $( '.jbar.men-vs-women' ).jbar( {
+			        width: 350, // multiplier of sprite width - in px
+			        speed: 4000, // miliseconds
+			        showLabel : false, 
+			        showValue : false 
+			    });
+			    
+			    // Start animation for all jBars
+			    $( '.jbar' ).jbar( 'start' );
+			});
+		</script>
+	</head>
+	<body>
+	
+	   <!-- Default chart -->
+	   <div class="chart">
+	       <h3>Chart 1</h3>
+		   
+		   <dl class="jbar chart-1">
+		       <dt>Item 1</dt>
+		       <dd>40 %</dd>
+		       <dt>Item 2</dt>
+               <dd>22</dd>
+               <dt>Item 3</dt>
+               <dd>16</dd>
+               <dt>Item 4</dt>
+               <dd>33</dd>
+               <dt>Long item label used</dt>
+               <dd>17</dd>
+               <dt>High number</dt>
+               <dd>88</dd>
+		   </dl>
+	   </div>
+	   
+	   <!-- Default chart with some nice layout -->
+	   <div class="chart">
+           <h3>Nice chart</h3>
+           
+           <dl class="jbar chart-2 rounded-end shadow">
+               <dt>Item 1</dt>
+               <dd>40 %</dd>
+               <dt>Item 2</dt>
+               <dd>22</dd>
+               <dt>Item 3</dt>
+               <dd>16</dd>
+               <dt>Item 4</dt>
+               <dd>33</dd>
+               <dt>Long item label used</dt>
+               <dd>17</dd>
+               <dt>High number</dt>
+               <dd>88</dd>
+           </dl>
+       </div>
+       
+       <!-- Chart with nice glass layout -->
+       <div class="chart glass">
+           <h3>Glass chart with no values shown</h3>
+           
+           <dl class="jbar chart-3">
+               <dt>V100</dt><dd>100</dd>
+               <dt>V75</dt><dd>75</dd>
+               <dt>V50</dt><dd>50</dd>
+               <dt>V25</dt><dd>25</dd>
+           </dl>
+       </div>
+	   
+	   <!-- Infographic :) -->
+	   <div class="chart">
+           <h3>Men vs Women infographic</h3>
+           <p>Using a sprite for bar background</p>
+           
+           <dl class="jbar men-vs-women">
+               <dt>Man</dt><dd>60 %</dd>
+               <dt>Woman</dt><dd>40 %</dd>
+           </dl>
+       </div>
+	</body>
+</html>
